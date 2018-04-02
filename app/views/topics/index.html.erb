@@ -21,6 +21,15 @@
             <p class="topic-text">
               <%= topic.description %>
             </p>
+            <%= form_with(model: [ @topic, @topic.comments.build ], local: true) do |form| %>
+              <p>
+                <%= form.label :body %><br>
+                <%= form.text_area :body %>
+              </p>
+              <p>
+                <%= form.submit %>
+              </p>
+            <% end %>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ end
 
 def index
   @topics = Topic.all.includes(:favorite_users)
+  @topics = Topic.all.includes(:comment_users)
 end
 
 def create
